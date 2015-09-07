@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	html {
+		background: lightgray;
+	}
+	</style>
+</head>
+<body>
+	<button id="create">Create Object</button>
+	<button id="send">Send Object</button>
+	<p></p>
+	<script type="text/javascript">
+		var object;
+		document.querySelector("#create").addEventListener("click", function(e) {
+			object = {
+				property: {
+					key: "quinze",
+					value: 15
+				}
+			};
+			document.querySelector("p").textContent = "Object created";
+		});
+		document.querySelector("#send").addEventListener("click", function(e) {
+			window.parent.value.obj = object;
+			document.querySelector("p").textContent = "Object sent";
+		});
+	</script>
+</body>
+</html>

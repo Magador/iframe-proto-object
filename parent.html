@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	html {
+		background: darkgray;
+	}
+	</style>
+</head>
+<body>
+	<iframe name="child" src="./child.html"></iframe>
+	<button id="destroy">Destroy Iframe</button>
+	<button id="check">Check __proto__</button>
+	<p></p>
+	<script type="text/javascript">
+		var value = {
+			obj: undefined
+		};
+		document.querySelector("#destroy").addEventListener("click", function(e) {
+			document.body.removeChild(document.querySelector("iframe"));
+		});
+		document.querySelector("#check").addEventListener("click", function(e) {
+			document.querySelector("p").textContent = value.obj.hasOwnProperty("property");
+		});
+	</script>
+</body>
+</html>
